@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import HomeClient from "./components/client";
 
-export default function Page() {
+export default function Home() {
   return (
     <Suspense fallback={null}>
       <HomeClient />

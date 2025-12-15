@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Nav from "./nav";
-import CategoriesBar from "./categories";
+import CategoriesBar from "./Categories";
 import Products2 from "./product";
 
 
