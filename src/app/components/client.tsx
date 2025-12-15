@@ -11,7 +11,7 @@ export default function HomeClient() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState<string>("");
   const [category, setCategory] = useState<string | undefined>(undefined);
 
   useEffect(() => {

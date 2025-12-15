@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Loader from "./loader";
 import { MdArrowOutward } from "react-icons/md";
+import { delay } from "framer-motion";
 
 type Product = {
   id: number;
@@ -12,7 +13,7 @@ type Product = {
   price: number;
   image_url: string;
   description: string;
-  Category?: string;
+  category?: string;
 };
 
 // الألوان المستخدمة في التصميم:
@@ -39,7 +40,7 @@ export default function Products2({
       try {
         let builder = supabase
           .from("products")
-          .select("id, title, price, image_url, description, Category, size, colors");
+          .select("id, title, price, image_url, description, category, size, colors");
 
         if (query && query.trim().length > 0) {
           const q = `%${query.trim()}%`;
@@ -49,7 +50,7 @@ export default function Products2({
 
         if (category && category.trim().length > 0) {
           // التصفية حسب الفئة
-          builder = builder.eq("Category", category);
+          builder = builder.eq("category", category);
         }
 
         // ترتيب المنتجات الأحدث أولاً (اختياري)
@@ -59,7 +60,7 @@ export default function Products2({
         if (error) throw error;
         if (mounted && data) setProducts(data as Product[]);
       } catch (err: unknown) {
-        console.error(err);
+        console.log(err);
         const message = (err as Error)?.message || "فشل تحميل المنتجات";
         setError(message);
       } finally {
@@ -78,12 +79,14 @@ export default function Products2({
   if (loading) return <Loader />;
 
   if (error)
+
     return (
       <div className="p-6 text-center">
         <p className="text-red-600 text-lg font-medium">
           ⚠️ حدث خطأ في تحميل البيانات:
         </p>
         <p className="text-sm text-gray-500 mt-1">{error}</p>
+        
       </div>
     );
 
@@ -109,7 +112,7 @@ export default function Products2({
               <h1 className="text-lg font-semibold text-gray-900">
                 {product.title}
               </h1>
-              <p className="text-sm text-gray-500">{product.Category}</p>
+              <p className="text-sm text-gray-500">{product.category}</p>
             </div>
 
             <p className="text-sm font-light text-gray-500">
