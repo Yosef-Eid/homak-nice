@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cairo, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "./components/footer";
 
 const geistSans = Cairo({
   variable: "--font-geist-sans",
@@ -29,6 +30,9 @@ export default function RootLayout({
         className={` ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <div className="z-50 absolute left-0 w-full">
+          <Footer />
+        </div>
       </body>
     </html>
   );

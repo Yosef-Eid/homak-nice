@@ -5,7 +5,6 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Loader from "./loader";
 import { MdArrowOutward } from "react-icons/md";
-import { delay } from "framer-motion";
 
 type Product = {
   id: number;
@@ -20,7 +19,7 @@ type Product = {
 // التمييز الأساسي: Deep Indigo (مثلاً: text-indigo-800 أو dark)
 // التمييز الثانوي (المعدني): Copper/Amber (مثلاً: text-amber-700 للسعر والأزرار)
 
-export default function Products2({
+export default function Products({
   query,
   category,
 }: {
@@ -109,7 +108,7 @@ export default function Products2({
 
           <div className=" w-full h-[35%] flex flex-col items-start justify-start mt-1 p-3">
             <div className="w-full flex items-center justify-between gap-2">
-              <h1 className="text-lg font-semibold text-gray-900">
+              <h1 className="text-lg font-semibold text-gradient-to-r from-blue-600 to-cyan-600">
                 {product.title}
               </h1>
               <p className="text-sm text-gray-500">{product.category}</p>
@@ -122,7 +121,7 @@ export default function Products2({
             </p>
 
             <div className="w-full flex justify-between items-center mt-5.5">
-              <div className="flex items-center justify-between gap-2 bg-black text-white pl-2 px-1 py-1 rounded-full">
+              <div className="flex items-center justify-between gap-2 bg-linear-to-r from-blue-600 to-cyan-600 p-2 text-white pl-2 px-1 py-1 rounded-full">
                 <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
                   <MdArrowOutward className="text-black" />
                 </div>

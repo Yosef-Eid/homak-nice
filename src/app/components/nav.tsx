@@ -1,7 +1,11 @@
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
+import { BsWhatsapp } from 'react-icons/bs'
 import { FaSearch, FaTimes, FaShoppingBag, FaUser, FaBars } from 'react-icons/fa'
+import { FaSquareWebAwesomeStroke } from 'react-icons/fa6'
+import { IoLogoFacebook } from 'react-icons/io5'
 
 interface NavProps {
   query: string
@@ -29,7 +33,7 @@ export default function Nav({ query, setQuery, onClearFilters, hasFilters }: Nav
             
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg"></div>
-              <span className="text-xl font-bold text-gray-900">متجر الأثاث</span>
+              <span className="text-xl font-bold text-gray-900">Homak</span>
             </div>
           </div>
 
@@ -62,7 +66,7 @@ export default function Nav({ query, setQuery, onClearFilters, hasFilters }: Nav
           </div>
 
           {/* الأيقونات */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1">
             {/* زر البحث على الهواتف */}
             <button
               onClick={() => setIsSearchExpanded(!isSearchExpanded)}
@@ -72,17 +76,14 @@ export default function Nav({ query, setQuery, onClearFilters, hasFilters }: Nav
             </button>
             
             {/* حساب المستخدم */}
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-              <FaUser className="text-gray-600" />
-            </button>
+            <Link href="https://wa.me/+201552299121" target="_blank" className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+              <BsWhatsapp className="text-green-600" size={22} />
+            </Link>
             
             {/* سلة التسوق */}
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors relative">
-              <FaShoppingBag className="text-gray-600" />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                3
-              </span>
-            </button>
+            <Link href="https://www.facebook.com/share/1HwpfuCo9P/" target="_blank" className="p-2 hover:bg-gray-100 rounded-full transition-colors relative">
+              <IoLogoFacebook className="text-blue-600" size={25} />
+            </Link>
           </div>
         </div>
 
