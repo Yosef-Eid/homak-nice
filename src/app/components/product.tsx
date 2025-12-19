@@ -15,10 +15,6 @@ type Product = {
   category?: string;
 };
 
-// الألوان المستخدمة في التصميم:
-// التمييز الأساسي: Deep Indigo (مثلاً: text-indigo-800 أو dark)
-// التمييز الثانوي (المعدني): Copper/Amber (مثلاً: text-amber-700 للسعر والأزرار)
-
 export default function Products({
   query,
   category,
@@ -29,6 +25,7 @@ export default function Products({
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
 
   useEffect(() => {
     let mounted = true;
