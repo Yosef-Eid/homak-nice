@@ -38,7 +38,8 @@ export default function Footer() {
               <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center mr-3">
                 <span className="text-xl font-bold">H</span>
               </div>
-              <h3 className="text-xl font-bold text-left">HOMAK</h3>
+              <h3 className="text-xl font-bold text-left">
+              ألمختار</h3>
             </div>
             <p className="text-blue-100 text-right leading-relaxed text-sm">
               نقدم حلولاً مبتكرة تلبي احتياجات العصر. نلتزم بمعايير الجودة

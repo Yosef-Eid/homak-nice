@@ -122,7 +122,7 @@ export default function Products({
                 <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
                   <MdArrowOutward className="text-black" />
                 </div>
-                <p>شراء الآن</p>
+                <p className="text-sm font-medium">شراء الآن</p>
               </div>
 
               <div className="text-lg font-bold text-black flex items-center gap-1.5">
