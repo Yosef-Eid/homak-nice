@@ -88,7 +88,7 @@ export default function Products({
 
   return (
     // الخلفية الرئيسية هنا يجب أن تكون (مثلاً: bg-gray-50 أو F4F4F9)
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 p-1 lg:p-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-4 lg:p-2">
       {products.map((product) => (
         <Link
           href={`/product/${product.id}`}
@@ -122,7 +122,7 @@ export default function Products({
                 <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
                   <MdArrowOutward className="text-black" />
                 </div>
-                <p className="text-sm font-medium">شراء الآن</p>
+                <p className="text-sm font-semibold">شراء الآن</p>
               </div>
 
               <div className="text-lg font-bold text-black flex items-center gap-1.5">
